@@ -1,0 +1,31 @@
+<div (ngxKeyEvent)="onKeyPress($event)" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="20px">
+  <div class="title">
+    Start pressing any keys on your keyboard!
+  </div>
+
+  <div class="results">
+    <ng-container *ngFor="let key of keyEvents.reverse()">
+      <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="15px">
+        <div>
+          You have pressed -
+        </div>
+        <div class="key">
+          {{key.key}}
+        </div>
+        <div class="code">
+          (key code: {{key.keyCode}})
+        </div>
+      </div>
+
+    </ng-container>
+  </div>
+
+  <div class="title" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
+    <div>
+      Use this directive within a Material dialog.
+    </div>
+    <div>
+      <button mat-flat-button color="primary" (click)="openDialog()">Open a dialog</button>
+    </div>
+  </div>
+</div>

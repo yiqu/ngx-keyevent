@@ -1,0 +1,16 @@
+.title {
+  font-size: 30px;
+}
+
+.results {
+  height: 8rem;
+  overflow: auto;
+  display: flex;
+  flex-direction: column-reverse;
+  .key {
+    font-weight: 700;
+  }
+  .code {
+    color: #ccc;
+  }
+}

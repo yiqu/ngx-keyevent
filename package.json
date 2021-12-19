@@ -1,6 +1,24 @@
 {
   "name": "ngx-keyevent",
-  "version": "0.0.0",
+  "description": "Angular directive for detecting keyups",
+  "author": {
+    "name": "Kevin Yi Qu",
+    "email": "yi.kevin.qu@gmail.com"
+  },
+  "license": "MIT",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yiqu/ngx-keyevent.git"
+  },
+  "keywords": [
+    "angular",
+    "angular key",
+    "key up",
+    "angular directive",
+    "key event",
+    "angular key event"
+  ],
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -8,21 +26,26 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
-  "private": true,
+  "private": false,
   "dependencies": {
     "@angular/animations": "~13.1.0",
+    "@angular/cdk": "^13.1.1",
     "@angular/common": "~13.1.0",
     "@angular/compiler": "~13.1.0",
     "@angular/core": "~13.1.0",
     "@angular/forms": "~13.1.0",
+    "@angular/material": "^13.1.1",
     "@angular/platform-browser": "~13.1.0",
     "@angular/platform-browser-dynamic": "~13.1.0",
     "@angular/router": "~13.1.0",
+    "@angular/flex-layout": "~13.0.0-beta.36",
+    "bootstrap": "~4.5.3",
     "rxjs": "~7.4.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
   },
   "devDependencies": {
+    "@angular-devkit/build-angular": "~13.1.2",
     "@angular/cli": "~13.1.2",
     "@angular/compiler-cli": "~13.1.0",
     "@types/jasmine": "~3.10.0",
@@ -33,6 +56,7 @@
     "karma-coverage": "~2.1.0",
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "~1.7.0",
+    "ng-packagr": "^13.0.0",
     "typescript": "~4.5.2"
   }
 }

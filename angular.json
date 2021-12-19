@@ -3,5 +3,137 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-  }
+    "ngx-keyevent": {
+      "projectType": "library",
+      "root": "projects/ngx-keyevent",
+      "sourceRoot": "projects/ngx-keyevent/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/ngx-keyevent/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ngx-keyevent/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/ngx-keyevent/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ngx-keyevent/src/test.ts",
+            "tsConfig": "projects/ngx-keyevent/tsconfig.spec.json",
+            "karmaConfig": "projects/ngx-keyevent/karma.conf.js"
+          }
+        }
+      }
+    },
+    "ngx-keyevent-app": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:application": {
+          "strict": true
+        }
+      },
+      "root": "projects/ngx-keyevent-app",
+      "sourceRoot": "projects/ngx-keyevent-app/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/ngx-keyevent-app",
+            "index": "projects/ngx-keyevent-app/src/index.html",
+            "main": "projects/ngx-keyevent-app/src/main.ts",
+            "polyfills": "projects/ngx-keyevent-app/src/polyfills.ts",
+            "tsConfig": "projects/ngx-keyevent-app/tsconfig.app.json",
+            "assets": [
+              "projects/ngx-keyevent-app/src/favicon.ico",
+              "projects/ngx-keyevent-app/src/assets"
+            ],
+            "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "projects/ngx-keyevent-app/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "projects/ngx-keyevent-app/src/environments/environment.ts",
+                  "with": "projects/ngx-keyevent-app/src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "ngx-keyevent-app:build:production"
+            },
+            "development": {
+              "browserTarget": "ngx-keyevent-app:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "ngx-keyevent-app:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ngx-keyevent-app/src/test.ts",
+            "polyfills": "projects/ngx-keyevent-app/src/polyfills.ts",
+            "tsConfig": "projects/ngx-keyevent-app/tsconfig.spec.json",
+            "karmaConfig": "projects/ngx-keyevent-app/karma.conf.js",
+            "assets": [
+              "projects/ngx-keyevent-app/src/favicon.ico",
+              "projects/ngx-keyevent-app/src/assets"
+            ],
+            "styles": [
+              "projects/ngx-keyevent-app/src/styles.css"
+            ],
+            "scripts": []
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "ngx-keyevent"
 }
