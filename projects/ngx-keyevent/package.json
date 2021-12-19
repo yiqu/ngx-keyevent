@@ -6,7 +6,7 @@
     "email": "yi.kevin.qu@gmail.com"
   },
   "license": "MIT",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "repository": {
     "type": "git",
     "url": "https://github.com/yiqu/ngx-keyevent.git"
@@ -22,7 +22,8 @@
   "scripts": {
     "build-lib": "ng build ngx-keyevent",
     "build-lib-watch": "ng build ngx-keyevent --watch",
-    "pack-lib": "cd ../../dist/ngx-keyevent && npm pack"
+    "pack-lib": "cd ../../dist/ngx-keyevent && npm pack",
+    "publish-lib": "npm publish ../../dist/ngx-keyevent/ngx-keyevent-x.x.x.tgz --access public"
   },
   "peerDependencies": {
     "@angular/common": "^13.1.0",
