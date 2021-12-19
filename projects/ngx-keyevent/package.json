@@ -1,9 +1,28 @@
 {
   "name": "ngx-keyevent",
-  "version": "0.0.1",
+  "description": "Angular directive for detecting keyups",
+  "author": {
+    "name": "Kevin Yi Qu",
+    "email": "yi.kevin.qu@gmail.com"
+  },
+  "license": "MIT",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yiqu/ngx-keyevent.git"
+  },
+  "keywords": [
+    "angular",
+    "angular key",
+    "key up",
+    "angular directive",
+    "key event",
+    "angular key event"
+  ],
   "scripts": {
     "build-lib": "ng build ngx-keyevent",
-    "build-lib-watch": "ng build ngx-keyevent --watch"
+    "build-lib-watch": "ng build ngx-keyevent --watch",
+    "pack-lib": "cd ../../dist/ngx-keyevent && npm pack"
   },
   "peerDependencies": {
     "@angular/common": "^13.1.0",

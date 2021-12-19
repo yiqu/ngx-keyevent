@@ -8,12 +8,12 @@ export class NgxKeyEventDirective {
   @HostListener('document:keyup', ['$event'])
   onKeyup(keyEvent: KeyboardEvent) {
     if (keyEvent) {
-      this.enterEscapeKeyEvent.emit(keyEvent);
+      this.pressUpEvent.emit(keyEvent);
     }
   }
 
   @Output('ngxKeyEvent')
-  enterEscapeKeyEvent: EventEmitter<KeyboardEvent> = new EventEmitter<KeyboardEvent>();
+  pressUpEvent: EventEmitter<KeyboardEvent> = new EventEmitter<KeyboardEvent>();
 
   constructor() {
   }
