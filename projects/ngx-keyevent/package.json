@@ -6,7 +6,7 @@
     "email": "yi.kevin.qu@gmail.com"
   },
   "license": "MIT",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "repository": {
     "type": "git",
     "url": "https://github.com/yiqu/ngx-keyevent.git"
@@ -26,8 +26,8 @@
     "publish-lib": "npm publish ../../dist/ngx-keyevent/ngx-keyevent-x.x.x.tgz --access public"
   },
   "peerDependencies": {
-    "@angular/common": "^13.1.0",
-    "@angular/core": "^13.1.0"
+    "@angular/common": "^10.0.0",
+    "@angular/core": "^10.0.0"
   },
   "dependencies": {
     "tslib": "^2.3.0"
