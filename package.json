@@ -21,7 +21,11 @@
   ],
   "scripts": {
     "ng": "ng",
-    "build-app": "ng build ngx-keyevent-app"
+    "build-app": "ng build ngx-keyevent-app",
+    "build-lib": "ng build ngx-keyevent",
+    "build-lib-watch": "ng build ngx-keyevent --watch",
+    "pack-lib": "cd ../../dist/ngx-keyevent && npm pack",
+    "publish-lib": "npm publish ../../dist/ngx-keyevent/ngx-keyevent-x.x.x.tgz --access public"
   },
   "private": false,
   "dependencies": {

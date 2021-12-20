@@ -15,6 +15,7 @@ script:
   - echo "Building for PROD"
   - echo "Using node legacy openssl provider"
   - export NODE_OPTIONS=--openssl-legacy-provider
+  - ng build ngx-keyevent
   - ng build ngx-keyevent-app --base-href=/ngx-keyevent/
 
 after_success:
