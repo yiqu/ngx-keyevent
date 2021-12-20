@@ -6,7 +6,7 @@
 
 ## Demo
 
-The demo of the animations is available at [here](yiqu.github.io/ngx-keyevent/).
+A demo is available at [here](yiqu.github.io/ngx-keyevent/).
 
 ## Usage
 
