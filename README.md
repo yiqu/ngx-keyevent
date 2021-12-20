@@ -1,6 +1,7 @@
 # ⌨️ ngx-keyevent
 
 [![npm](https://img.shields.io/npm/v/ngx-keyevent.svg)](https://www.npmjs.com/package/ngx-keyevent)
+[![npm](https://app.travis-ci.com/yiqu/ngx-keyevent.svg?branch=master)](https://app.travis-ci.com/github/yiqu/ngx-keyevent)
 
 `ngx-keyevent` is a simple Angular directive that can be used on any HTML element to listen for user's key press when the element in is view.
 
