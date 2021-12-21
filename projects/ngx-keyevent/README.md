@@ -8,6 +8,15 @@
 
 A demo is available at [here](yiqu.github.io/ngx-keyevent/).
 
+## Compatibility
+
+| Angular    | ngx-keyevent |
+| -----------| ----------- |
+| 10         | ^v1.0.0       |
+| 11         | ^v1.0.0        |
+| 12         | ^v2.0.0        |
+| 13         | ^v3.0.0        |
+
 ## Usage
 
 ```
