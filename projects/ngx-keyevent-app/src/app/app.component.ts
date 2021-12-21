@@ -16,7 +16,7 @@ export class AppComponent {
 
   onKeyPress(event: KeyboardEvent) {
     console.log(event);
-    this.keyEvents.push(event);
+    this.keyEvents.unshift(event);
   }
 
   openDialog(): void {

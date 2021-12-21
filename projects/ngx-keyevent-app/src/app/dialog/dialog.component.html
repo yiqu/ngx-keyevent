@@ -1,9 +1,10 @@
 <div (ngxKeyEvent)="onKeyPress($event)">
   <h1 mat-dialog-title>Hello, I am a dialog.</h1>
   <div mat-dialog-content>
-    <p>autoClose is disabled.</p>
-    <p>
-      You can still close me by pressing Escape.
+    <p>Close on clickout is disabled.</p>
+    <p>I have binded (ngxKeyEvent) output to call this.dialogRef.close();</p>
+    <p class="font-weight-bold">
+      Close me by pressing Escape!
     </p>
   </div>
   <div mat-dialog-actions>
