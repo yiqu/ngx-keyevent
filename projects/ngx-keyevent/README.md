@@ -5,20 +5,20 @@
 [![npm](https://img.shields.io/travis/com/yiqu/ngx-keyevent/master)](https://app.travis-ci.com/github/yiqu/ngx-keyevent)
 [![npm](https://img.shields.io/npm/dt/ngx-keyevent?color=%23006600&logoColor=%23006600)](https://www.npmjs.com/package/ngx-keyevent)
 
-`ngx-keyevent` is a simple Angular directive that can be used on any HTML element to listen for user's key press when the element in is view.
+`ngx-keyevent` is a simple Angular directive / service that can be used on any HTML element, or injected to listen for user's key presses.
 
 ## Demo
 
-A demo is available at [here](yiqu.github.io/ngx-keyevent/).
+A demo is available at [here](https://yiqu.github.io/ngx-keyevent/).
 
 ## Compatibility
 
 | Angular    | ngx-keyevent |
 | -----------| ----------- |
-| 10         | ^v1.0.0       |
-| 11         | ^v1.0.0        |
-| 12         | ^v2.0.0        |
-| 13         | ^v3.0.0        |
+| 10         | ^v1.x.x       |
+| 11         | ^v1.x.x        |
+| 12         | ^v2.x.x        |
+| 13         | ^v3.x.x        |
 
 ## Usage
 
@@ -47,13 +47,10 @@ export class AppModule { }
 
 ## Example
 
-Listen for key events in MyComponent:
+Listen for key events in `MyComponent` using `ngx-keyevent` directive.
 
 ```javascript
 // my-component.component.ts
-import { trigger, transition, useAnimation } from '@angular/animations';
-import { bounce } from 'ng-animate';
-
 @Component({
   selector: 'my-component',
   templateUrl: 'my-component.component.html',
@@ -74,7 +71,27 @@ export class MyComponent {
 <div (ngxKeyEvent)="onKeyEvent($event)"></div>
 ```
 
-That's it, done! You can listen to any keys. The output `type` is [KeyboardEvent](https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent).
+Or, listen for key events in `MyComponent` by injecting the` ngx-keyevent` service:
+
+```javascript
+@Component({
+  selector: 'my-component',
+  templateUrl: 'my-component.component.html',
+})
+export class MyComponent implements OnInit {
+  
+  constructor(private keyService: NgxKeyeventService) {}
+
+  ngOnInit(): void {
+    this.keyService.keyEventChanges().subscribe((keyEvent: KeyboardEvent) => {
+      console.log('Just pressed: ', keyEvent);
+    });
+  }
+}
+```
+
+The output `type` is [KeyboardEvent](https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent).
+
 
 ## Dialogs example: Closing a Material Dialog 
 

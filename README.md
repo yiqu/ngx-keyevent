@@ -5,11 +5,11 @@
 [![npm](https://img.shields.io/travis/com/yiqu/ngx-keyevent/master)](https://app.travis-ci.com/github/yiqu/ngx-keyevent)
 [![npm](https://img.shields.io/npm/dt/ngx-keyevent?color=%23006600&logoColor=%23006600)](https://www.npmjs.com/package/ngx-keyevent)
 
-`ngx-keyevent` is a simple Angular directive that can be used on any HTML element to listen for user's key press when the element in is view.
+`ngx-keyevent` is a simple Angular directive / service that can be used on any HTML element, or injected to listen for user's key presses.
 
 ## Demo
 
-The demo of the animations is available at [here](https://yiqu.github.io/ngx-keyevent/).
+A demo is available at [here](https://yiqu.github.io/ngx-keyevent/).
 
 ## Compatibility
 
@@ -47,13 +47,10 @@ export class AppModule { }
 
 ## Example
 
-Listen for key events in MyComponent:
+Listen for key events in `MyComponent` using `ngx-keyevent` directive.
 
 ```javascript
 // my-component.component.ts
-import { trigger, transition, useAnimation } from '@angular/animations';
-import { bounce } from 'ng-animate';
-
 @Component({
   selector: 'my-component',
   templateUrl: 'my-component.component.html',
@@ -74,7 +71,27 @@ export class MyComponent {
 <div (ngxKeyEvent)="onKeyEvent($event)"></div>
 ```
 
-That's it, done! You can listen to any keys. The output `type` is [KeyboardEvent](https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent).
+Or, listen for key events in `MyComponent` by injecting the` ngx-keyevent` service:
+
+```javascript
+@Component({
+  selector: 'my-component',
+  templateUrl: 'my-component.component.html',
+})
+export class MyComponent implements OnInit {
+  
+  constructor(private keyService: NgxKeyeventService) {}
+
+  ngOnInit(): void {
+    this.keyService.keyEventChanges().subscribe((keyEvent: KeyboardEvent) => {
+      console.log('Just pressed: ', keyEvent);
+    });
+  }
+}
+```
+
+The output `type` is [KeyboardEvent](https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent).
+
 
 ## Dialogs example: Closing a Material Dialog 
 
@@ -151,37 +168,4 @@ export class AppComponent {
     })
   }
 }
-```
-
-## Developers
-
-This workspace has two projects, one is the `ngx-keyevent` library, other is the example application using `ngx-keyevent`.
-
-```
-git checkout git@github.com:yiqu/ngx-keyevent.git
-```
-Making changes to library:
-
-```
-cd ngx-keyevent/projects/ngx-keyevent
-ng build ngx-keyevent --watch
-```
-
-Building the library
-
-```
-ng build ngx-keyevent
-```
-
-Serving the application:
-
-```
-cd ngx-keyevent/projects/ngx-keyevent-app
-ng serve
-```
-
-Building the application
-
-```
-ng build ngx-keyevent-app
 ```

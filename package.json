@@ -1,12 +1,12 @@
 {
   "name": "ngx-keyevent",
-  "description": "Angular directive for detecting keyups",
+  "description": "Angular directive and service for detecting key events",
   "author": {
     "name": "Kevin Yi Qu",
     "email": "yi.kevin.qu@gmail.com"
   },
   "license": "MIT",
-  "version": "3.0.0",
+  "version": "3.0.3",
   "repository": {
     "type": "git",
     "url": "https://github.com/yiqu/ngx-keyevent.git"

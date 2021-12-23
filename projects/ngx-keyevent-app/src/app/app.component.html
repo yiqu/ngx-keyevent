@@ -3,12 +3,12 @@
   src="https://github.blog/wp-content/uploads/2008/12/forkme_right_green_007200.png?resize=149%2C149"
   class="attachment-full size-full " alt="Fork me on GitHub" data-recalc-dims="1">
 </a>
-<div (ngxKeyEvent)="onKeyPress($event)" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="20px"
+<div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="20px"
   class="container pt-5">
 
   <div class="title" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
     <div>
-      Use this ngx-keyevent within a Material dialog.
+      Using ngx-keyevent directive to close a Material dialog.
     </div>
     <div>
       <button mat-flat-button color="primary" (click)="openDialog()">Open a dialog</button>
@@ -16,7 +16,10 @@
   </div>
 
   <div class="title">
-    Or, start pressing any keys on your keyboard and see what you pressed:
+    Injecting the ngx-keyevent service in any component to listen for key events:
+    <div class="text-muted">
+      Start typing..
+    </div>
   </div>
   <div class="results w-100" fxLayout="column" fxLayoutAlign="center center">
     <ng-container *ngFor="let key of keyEvents">
@@ -33,6 +36,5 @@
       </div>
     </ng-container>
   </div>
-
-
 </div>
+<app-bottom-component></app-bottom-component>

@@ -1,5 +1,6 @@
-import { Component, Inject } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { NgxKeyeventService } from 'ngx-keyevent';
 import { DialogOverviewExampleDialog } from './dialog/dialog.component';
 
 @Component({
@@ -7,16 +8,18 @@ import { DialogOverviewExampleDialog } from './dialog/dialog.component';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
 
   keyEvents: KeyboardEvent[] = [];
 
-  constructor(public dialog: MatDialog) {
+  constructor(public dialog: MatDialog, private keyService: NgxKeyeventService) {
   }
 
-  onKeyPress(event: KeyboardEvent) {
-    console.log(event);
-    this.keyEvents.unshift(event);
+  ngOnInit(): void {
+    this.keyService.keyEventChanges().subscribe((keyEvent: KeyboardEvent) => {
+      console.log(keyEvent);
+      this.keyEvents.unshift(keyEvent);
+    });
   }
 
   openDialog(): void {
